@@ -1,14 +1,6 @@
 export type GetPosts = (argument: GetPostsArguments) => Promise<unknown>;
 
-export type GetPostsBodyLimitParameter =
-  | "5"
-  | "10"
-  | "20"
-  | "50"
-  | 5
-  | 10
-  | 20
-  | 50;
+export type GetPostsBodyLimitParameter = 5 | 10 | 20 | 50;
 
 export enum GetPostsBodyOrderByParameter {
   CreatedAt = "p.createdAt",
@@ -27,10 +19,27 @@ export enum GetPostsBodyOrderDirParameter {
 export type GetPostsQueryParameters = {
   /**
    * Offset results
+   *
+   * @default 1
    */
   page?: number;
+  /**
+   * Number of items to return
+   *
+   * @default 10
+   */
   limit?: GetPostsBodyLimitParameter;
+  /**
+   * Sort results
+   *
+   * @default "p.createdAt"
+   */
   orderBy?: GetPostsBodyOrderByParameter;
+  /**
+   * Sort direction
+   *
+   * @default "desc"
+   */
   orderDir?: GetPostsBodyOrderDirParameter;
 };
 
