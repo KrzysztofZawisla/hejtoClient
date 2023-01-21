@@ -19,6 +19,11 @@ export enum GetPostsBodyOrderByParameter {
   Rand = "rand",
 }
 
+export enum GetPostsBodyOrderDirParameter {
+  Ascending = "asc",
+  Descending = "desc",
+}
+
 export type GetPostsQueryParameters = {
   /**
    * Offset results
@@ -26,10 +31,10 @@ export type GetPostsQueryParameters = {
   page?: number;
   limit?: GetPostsBodyLimitParameter;
   orderBy?: GetPostsBodyOrderByParameter;
+  orderDir?: GetPostsBodyOrderDirParameter;
 };
 
 export type GetPostsArguments = {
   customEndpoint?: string;
   queryParameters?: GetPostsQueryParameters;
-  body: {};
 };
