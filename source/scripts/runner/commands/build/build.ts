@@ -7,5 +7,5 @@ import { $ } from "zx";
     $.shell = "cmd";
     $.prefix = "";
   }
-  await $`yarn run rimraf destination && cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json webpack --mode production`;
+  await $`yarn run rimraf destination && cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json webpack --mode production && tsc --project tsconfig.output.json`;
 })();
